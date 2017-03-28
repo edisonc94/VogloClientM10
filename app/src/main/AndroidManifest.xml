@@ -16,7 +16,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".UserActivity" />
-        <activity android:name=".ServiceActivity"></activity>
+        <activity android:name=".ServiceActivity" />
+        <activity android:name=".BuscarUsuarios" />
+        <activity android:name=".EliminarUsuario" />
+        <activity android:name=".BuscarUsuarioPorId" />
+        <activity android:name=".InsertarUsuario" />
+        <activity android:name=".ActualizarUsuario"></activity>
     </application>
 
 </manifest>

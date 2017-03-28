@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="org.escoladeltreball.vogloclientm10.BuscarUsuarios">
+
+    <EditText
+        android:id="@+id/limit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName|number"
+        tools:text="Limit" />
+
+    <Button
+        android:id="@+id/busca"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Busca" />
+
+    <TextView
+        android:id="@+id/resultado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>
