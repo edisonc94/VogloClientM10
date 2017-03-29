@@ -18,27 +18,31 @@ public class UserActivity extends AppCompatActivity {
         setContentView(R.layout.activity_user);
 
         buscarUsuarios = (Button) findViewById(R.id.buscaUsuarios);
-//        buscarUsuarioPorId = (Button) findViewById(R.id.buscaUsuarioPorId);
-//        insertarUsuario = (Button) findViewById(R.id.insertaUsuario);
-//        actualizarUsuario = (Button) findViewById(R.id.actualizaUsuario);
-//        eliminarUsuario = (Button) findViewById(R.id.eliminaUsuario);
+        buscarUsuarioPorId = (Button) findViewById(R.id.buscaUsuarioPorId);
+        insertarUsuario = (Button) findViewById(R.id.insertaUsuario);
+        actualizarUsuario = (Button) findViewById(R.id.actualizaUsuario);
+        eliminarUsuario = (Button) findViewById(R.id.eliminaUsuario);
 
         buscarUsuarios.setOnClickListener(v -> {
             Intent intent = new Intent(this, BuscarUsuarios.class);
             startActivity(intent);
         });
-//        buscarUsuarioPorId.setOnClickListener(v -> {
-//            lanzaActivity(BuscarUsuarioPorId.class);
-//        });
-//        insertarUsuario.setOnClickListener(v -> {
-//            lanzaActivity(InsertarUsuario.class);
-//        });
-//        actualizarUsuario.setOnClickListener(v -> {
-//            lanzaActivity(ActualizarUsuario.class);
-//        });
-//        eliminarUsuario.setOnClickListener(v -> {
-//            lanzaActivity(EliminarUsuario.class);
-//        });
+        buscarUsuarioPorId.setOnClickListener(v -> {
+            Intent intent = new Intent(this, BuscarUsuarioPorId.class);
+            startActivity(intent);
+        });
+        insertarUsuario.setOnClickListener(v -> {
+            Intent intent = new Intent(this, InsertarUsuario.class);
+            startActivity(intent);
+        });
+        actualizarUsuario.setOnClickListener(v -> {
+            Intent intent = new Intent(this, ActualizarUsuario.class);
+            startActivity(intent);
+        });
+        eliminarUsuario.setOnClickListener(v -> {
+            Intent intent = new Intent(this, EliminarUsuario.class);
+            startActivity(intent);
+        });
 
     }
 

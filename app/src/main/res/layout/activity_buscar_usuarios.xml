@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName|number"
-        tools:text="Limit" />
+        android:hint="Limit" />
 
     <Button
         android:id="@+id/busca"
@@ -24,5 +24,7 @@
     <TextView
         android:id="@+id/resultado"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:textAlignment="center" />
 </LinearLayout>

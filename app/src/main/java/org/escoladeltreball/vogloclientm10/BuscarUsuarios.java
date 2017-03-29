@@ -20,7 +20,7 @@ public class BuscarUsuarios extends AppCompatActivity {
     Button buscar;
     TextView resultado;
     List<User> list = new ArrayList<User>();
-    int limitInt = 0;
+    int limitInt = Integer.MAX_VALUE;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,44 +31,43 @@ public class BuscarUsuarios extends AppCompatActivity {
         buscar = (Button) findViewById(R.id.busca);
         resultado = (TextView) findViewById(R.id.resultado);
 
-
-        Thread t1 = new Thread() {
-            @Override
-            public void run() {
-                DefaultApi apiInstance = new DefaultApi();
-                apiInstance.setApiClient(new ApiClient().setBasePath("192.168.1.7:8084/v1/"));
-                try {
-                    if (!"".equals(limit.getText().toString())){
-                        limitInt = Integer.valueOf(limit.getText().toString());
+        buscar.setOnClickListener(view -> {
+            Thread t1 = new Thread() {
+                @Override
+                public void run() {
+                    DefaultApi apiInstance = new DefaultApi();
+                    apiInstance.setApiClient(new ApiClient().setBasePath("http://10.0.2.2:8084/v1"));
+                    try {
+                        if (!"".equals(limit.getText().toString())){
+                            limitInt = Integer.valueOf(limit.getText().toString());
+                        }
+                        list = apiInstance.obtenirUsuaris(limitInt);
+                    } catch (ApiException e) {
+                        e.printStackTrace();
                     }
-                    list = apiInstance.userGet(1);
-                } catch (ApiException e) {
-                    e.printStackTrace();
                 }
+            };
+
+            t1.start();
+            try {
+                t1.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
-        };
 
-        t1.start();
-        try {
-            t1.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+            String resultadoStr = "";
+            for (int i = 0; i < list.size(); i++) {
+                resultadoStr += list.get(i).getId()+" ";
+                resultadoStr += list.get(i).getName()+" ";
+                resultadoStr += list.get(i).getType()+" ";
+                resultadoStr += new Double(list.get(i).getMoney().toString());
+                resultadoStr += "\n";
+            }
 
-        String resultadoStr = "";
-        for (int i = 0; i < list.size(); i++) {
-            resultadoStr += "Id: "+list.get(i).getId();
-            resultadoStr += "Name: "+list.get(i).getUsername();
-            resultadoStr += "Type: "+list.get(i).getType();
-            resultadoStr += "Money: "+list.get(i).getMoney();
-            resultadoStr += "\r";
-        }
-
-        resultado.setText(resultadoStr);
-        if ("".equals(resultado.getText().toString())){
-            resultado.setText("No hay resultados");
-        }
-
-
+            resultado.setText("ID NAME TYPE MONEY\n"+resultadoStr);
+            if ("".equals(resultado.getText().toString())){
+                resultado.setText("No hay resultados");
+            }
+        });
     }
 }
