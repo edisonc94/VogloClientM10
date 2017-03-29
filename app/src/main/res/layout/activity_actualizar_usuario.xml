@@ -1,9 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="org.escoladeltreball.vogloclientm10.ActualizarUsuario">
 
-</android.support.constraint.ConstraintLayout>
+    <EditText
+        android:id="@+id/idUserOld"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName|number"
+        android:hint="ID del usuario a modificar" />
+    <Button
+        android:id="@+id/busca"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Busca" />
+    <EditText
+        android:id="@+id/idUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName|number"
+        android:hint="ID"
+        android:visibility="invisible" />
+    <EditText
+        android:id="@+id/nombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Nombre"
+        android:visibility="invisible" />
+    <EditText
+        android:id="@+id/type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Tipo"
+        android:visibility="invisible" />
+    <EditText
+        android:id="@+id/money"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName|number"
+        android:hint="Dinero"
+        android:visibility="invisible" />
+    <Button
+        android:id="@+id/busca2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Modifica"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/resultado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"/>
+
+</LinearLayout>

@@ -25,6 +25,13 @@
         android:id="@+id/resultado"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="30sp"
-        android:textAlignment="center" />
+        android:textSize="30sp"/>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/table"
+        android:visibility="invisible">
+
+    </TableLayout>
 </LinearLayout>
